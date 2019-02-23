@@ -1,1 +1,1 @@
-web: gunicorn backend_abundancia.wsgi --log-file -
+web: gunicorn gettingstarted.wsgi --log-file -
