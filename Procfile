@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi --log-file -
+web: gunicorn --pythonpath backend_abundancia.wsgi --log-file -
