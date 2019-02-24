@@ -87,16 +87,16 @@ WSGI_APPLICATION = 'backend_abundancia.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'abundance',
-#         'USER': 'gabriel',
-#         'PASSWORD': 'senha123',
-#         'HOST': 'https://immense-wave-53840.herokuapp.com/db',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'abundance',
+        'USER': 'gabriel',
+        'PASSWORD': 'senha123',
+        'HOST': 'https://immense-wave-53840.herokuapp.com/db',
+        'PORT': '5432',
+    }
+}
 
 DATABASES['default'] = dj_database_url.config(
     conn_max_age=600,
