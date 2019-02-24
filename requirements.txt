@@ -13,3 +13,4 @@ six==1.12.0
 django-heroku
 gunicorn
 requests
+dj-database-url
