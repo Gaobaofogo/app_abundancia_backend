@@ -92,7 +92,7 @@ DATABASES = {
         'NAME': 'abundance',
         'USER': 'gabriel',
         'PASSWORD': 'senha123',
-        'HOST': 'postgres://zvefqrogxkcnyb:f4091ff6b80cc53346c82033279d38cc7877f55cbf8f3f6dd2d5b8b83e60a7cb@ec2-107-22-162-8.compute-1.amazonaws.com:5432/decmp5sl0ce0a2',
+        'HOST': 'https://immense-wave-53840.herokuapp.com/db',
         'PORT': '5432',
     }
 }
