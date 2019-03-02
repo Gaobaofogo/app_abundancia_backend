@@ -11,7 +11,10 @@ class TaskType(DjangoObjectType):
 
 
 class Query(graphene.ObjectType):
-    tasks = graphene.List(TaskType)
+    tasks = graphene.List(TaskType, id=graphene.Int())
 
-    def resolve_tasks(self, info, **kwargs):
+    def resolve_tasks(self, info, id=None, **kwargs):
+        if id:
+            return Task.objects.filter(id=id)
+
         return Task.objects.all()
