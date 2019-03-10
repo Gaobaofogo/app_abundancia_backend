@@ -1,6 +1,8 @@
+import graphene
+import graphql_jwt
+
 from django.contrib.auth import get_user_model
 
-import graphene
 from graphene_django import DjangoObjectType
 
 
@@ -12,6 +14,7 @@ class UserType(DjangoObjectType):
 
 class CreateUser(graphene.Mutation):
     user = graphene.Field(UserType)
+    token_auth = graphql_jwt.ObtainJSONWebToken.Field()
 
     class Arguments:
         username = graphene.String(required=True)
