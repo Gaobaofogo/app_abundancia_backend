@@ -31,4 +31,4 @@ class Query(graphene.ObjectType):
         return Task.objects.all()
 
     def resolve_task_logs(self, info, **kwargs):
-        return TaskLogType.objects.all()
+        return TaskLog.objects.all()
