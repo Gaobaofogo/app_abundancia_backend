@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'eb9ehno*a(%(=c4r%5vg00b%s_563+8ho57kmk%op@$h0)fg9#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['immense-wave-53840.herokuapp.com']
 
