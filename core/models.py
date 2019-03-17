@@ -12,11 +12,8 @@ class Task(models.Model):
 
 
 class TaskLog(models.Model):
-    id_user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
-    )
-    id_task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    user = models.IntegerField()
+    task = models.IntegerField()
 
     def __str__(self):
-        return 'Id user: {} - Id task: {}'.format(self.id_user, self.id_task)
+        return 'Id user: {} - Id task: {}'.format(self.user, self.task)
