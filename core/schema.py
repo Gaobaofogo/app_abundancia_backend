@@ -2,7 +2,7 @@ import graphene
 
 from graphene_django import DjangoObjectType
 
-from .models import Task, TaskLog
+from .models import Task, TaskDone
 
 
 class TaskType(DjangoObjectType):
@@ -10,14 +10,14 @@ class TaskType(DjangoObjectType):
         model = Task
 
 
-class TaskLogType(DjangoObjectType):
+class TaskDone(DjangoObjectType):
     class Meta:
-        model = TaskLog
+        model = TaskDone
 
 
 class Query(graphene.ObjectType):
     tasks = graphene.List(TaskType, id=graphene.Int())
-    task_logs = graphene.List(TaskLogType)
+    task_done = graphene.List(TaskDone)
 
     def resolve_tasks(self, info, id=None, **kwargs):
         user = info.context.user
@@ -27,5 +27,5 @@ class Query(graphene.ObjectType):
 
         return Task.objects.all()
 
-    def resolve_task_logs(self, info, **kwargs):
-        return TaskLog.objects.all()
+    def resolve_task_done(self, info, **kwargs):
+        return TaskDone.objects.all()

@@ -11,7 +11,7 @@ class Task(models.Model):
         return self.title
 
 
-class TaskLog(models.Model):
+class TaskDone(models.Model):
     user = models.IntegerField()
     task = models.IntegerField()
 
