@@ -11,7 +11,7 @@ class Task(models.Model):
         return self.title
 
 
-class TaskDone(models.Model):
+class DoneTask(models.Model):
     user_id = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
