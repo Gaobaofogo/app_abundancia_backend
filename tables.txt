@@ -1,0 +1,6 @@
+CREATE TABLE core_taskdone(
+    id INTEGER NOT NULL,
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    task_id INTEGER REFERENCES core_task(id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+);

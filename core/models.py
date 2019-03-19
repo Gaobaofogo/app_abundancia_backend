@@ -12,8 +12,11 @@ class Task(models.Model):
 
 
 class TaskDone(models.Model):
-    user = models.IntegerField()
-    task = models.IntegerField()
+    user_id = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    task_id = models.ForeignKey(Task, on_delete=models.CASCADE)
 
     def __str__(self):
-        return 'Id user: {} - Id task: {}'.format(self.user, self.task)
+        return 'User: {} - Task: {}'.format(self.user, self.task)
