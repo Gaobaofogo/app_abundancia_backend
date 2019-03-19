@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import Task, TaskDone
+from .models import Task, DoneTask
 
 # Register your models here.
 
 admin.site.register(Task)
-admin.site.register(TaskDone)
+admin.site.register(DoneTask)
