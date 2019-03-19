@@ -19,4 +19,4 @@ class DoneTask(models.Model):
     task_id = models.ForeignKey(Task, on_delete=models.CASCADE)
 
     def __str__(self):
-        return 'User: {} - Task: {}'.format(self.user, self.task)
+        return 'User: {} - Task: {}'.format(self.user_id, self.task_id)
