@@ -1,6 +1,7 @@
 import graphene
 
 from graphene_django import DjangoObjectType
+from graphene_file_upload.scalars import Upload
 
 from .models import Task, DoneTask
 
@@ -17,7 +18,7 @@ class DoneTaskType(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     tasks = graphene.List(TaskType, id=graphene.Int())
-    task_done = graphene.List(DoneTaskType)
+    done_task = graphene.List(DoneTaskType)
 
     def resolve_tasks(self, info, id=None, **kwargs):
         user = info.context.user
@@ -29,3 +30,19 @@ class Query(graphene.ObjectType):
 
     def resolve_done_task(self, info, **kwargs):
         return DoneTask.objects.all()
+
+
+class UploadMutation(graphene.Mutation):
+    class Arguments:
+        file = Upload(required=True)
+
+    success = graphene.Boolean()
+
+    def mutate(self, info, file, **kwargs):
+        # do something with your file
+
+        return UploadMutation(success=True)
+
+
+class Mutation(graphene.ObjectType):
+    upload_file = UploadMutation.Field()
