@@ -6,7 +6,7 @@ class Task(models.Model):
     title = models.CharField(max_length=50)
     body = models.TextField()
     video = models.CharField(max_length=100)
-    photo = models.FileField(upload_to='media/tasks')
+    photo = models.FileField(upload_to='media/tasks', blank=True, null=True)
 
     def __str__(self):
         return self.title
