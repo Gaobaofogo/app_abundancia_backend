@@ -15,7 +15,7 @@ idna==2.8
 pep8==1.7.1
 promise==2.2.1
 psycopg2==2.7.7
-PyJWT==1.7.1
+PyJWT==2.4.0
 pytz==2018.9
 requests==2.21.0
 Rx==1.6.1
